@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz aniversário!!!</title>
+    <link rel="stylesheet" href="style2.css">
+    <style>
+        /* Estilo básico para o contador */
+        .countdown {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>🎶 uma musica que lembra você 🎶</h2>
+    <!-- Usando um arquivo MP3 diretamente -->
+    <audio controls autoplay>
+        <source src="musica/mattosnascimento-o-sonho-de-jose.mp3" type="audio/mp3">
+    </audio>
+    
+    <h2>🎉 A sua melhor foto 🎉</h2>
+    <img src="foto/c33a9948-e0b6-4b3e-a101-f223d447e8a5.jpg" alt="Foto Personalizada" width="300">
+    
+    <h2>⏳ O tempo que tu viveu sendo incrivel ⏳</h2>
+    <div id="contador" class="countdown"></div> <!-- O contador será exibido aqui -->
+    
+    <div class="line"></div>
+    
+    <h3>💌 Falando um pouquinho pra ti 💌</h3>
+    <p>Feliz aniversário! Que esse dia seja repleto de alegria, amor e felicidade!</p>
+    
+    <script>
+        function atualizarContador() {
+            const dataInicial = new Date("2007-04-02T00:00:00").getTime(); // Data de início
+            setInterval(() => {
+                const agora = new Date().getTime();
+                let diferenca = agora - dataInicial; // Tempo passado desde a data inicial
+                
+                // Calculando o tempo decorrido
+                const anos = Math.floor(diferenca / (1000 * 60 * 60 * 24 * 365));
+                const meses = Math.floor((diferenca % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+                const semanas = Math.floor((diferenca % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24 * 7));
+                const dias = Math.floor((diferenca % (1000 * 60 * 60 * 24 * 7)) / (1000 * 60 * 60 * 24));
+                const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+                const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+                
+                // Exibindo o tempo decorrido no HTML
+                document.getElementById("contador").innerHTML =
+                    `${anos} anos, ${meses} meses, ${semanas} semanas, ${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
+            }, 1000);
+        }
+        atualizarContador();
+    </script>
+</body>
+</html>
