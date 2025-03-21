@@ -1,24 +1,24 @@
 body {
     text-align: center;
-    font-family: Arial, sans-serif;
+    font-family: cursive;
     margin: 50px;
-    background-color: #e1f5fe;
+    background-color: bisque;
 }
 h2, h3 {
-    color: #01579b;
+    color: #b47413;
 }
 .countdown {
     font-size: 20px;
     font-weight: bold;
-    color: #d50000;
+    color: #ffffff;
 }
 .line {
     margin: 20px auto;
     width: 50%;
     height: 2px;
-    background: black;
+    background: rgb(0, 0, 0);
 }
 img {
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
 }
